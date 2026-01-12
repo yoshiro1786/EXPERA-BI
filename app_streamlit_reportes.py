@@ -33,13 +33,20 @@ st.markdown("""
         --card-bg: #ffffff;
     }
 
-    /* Global Styles */
+    /* Global Styles & Light Mode Enforcement */
     .stApp {
         background: radial-gradient(circle at top right, #f1f5f9, #ffffff) !important;
+        color: #1e293b !important;
     }
     
-    html, body, [data-testid="stSidebar"] {
+    html, body, [data-testid="stSidebar"], [data-testid="stAppViewContainer"] {
         font-family: 'Inter', sans-serif;
+        background-color: white !important;
+    }
+
+    /* Force visibility of all text labels and headers */
+    label, p, span, h1, h2, h3, h4, .stMarkdown {
+        color: #1e293b !important;
     }
 
     /* Clean Logo Container */
@@ -94,21 +101,22 @@ st.markdown("""
     
     /* Unified Search Bar & Filter Button Style */
     div[data-testid="stTextInput"] > div[data-baseweb="input"],
-    div[data-testid="stPopover"] > button {
-        border-radius: 24px !important;
+    div[data-testid="stPopover"] > button,
+    .stTextInput input {
+        border-radius: 20px !important;
         border: 1px solid rgba(226, 232, 240, 0.8) !important;
         background-color: white !important;
-        min-height: 65px !important;
-        height: 65px !important;
+        color: #1e293b !important;
         box-shadow: 0 10px 30px -10px rgba(0,0,0,0.05) !important;
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
     }
     
     div[data-testid="stTextInput"] input {
-        color: var(--text-main) !important;
         padding: 0 30px !important;
-        font-size: 1.15rem !important;
-        height: 65px !important;
+        font-size: 1.1rem !important;
+        height: 60px !important;
+        background-color: white !important;
+        color: #1e293b !important;
     }
 
     div[data-testid="stPopover"] > button {
@@ -183,14 +191,23 @@ st.markdown("""
         border: 1px solid #e2e8f0;
     }
 
-    /* Standardized Popover Height */
+    .stForm {
+        background-color: white !important;
+        border-radius: 24px !important;
+        border: 1px solid #f1f5f9 !important;
+    }
+
+    /* Interactive Popover Style */
     div[data-testid="stPopover"] > button {
         height: 60px !important;
         min-height: 60px !important;
-        border-radius: 16px !important;
-        border: 2px solid #e2e8f0 !important;
+        width: 100% !important;
+        color: #64748b !important;
+        font-weight: 500 !important;
+        font-size: 1rem !important;
+        padding: 0 25px !important;
         background-color: white !important;
-        color: var(--text-main) !important;
+        border: 2px solid #f1f5f9 !important;
     }
 
     /* Interactive Buttons */
