@@ -67,6 +67,13 @@ st.markdown("""
     footer {visibility: hidden;}
     header {visibility: hidden;}
     
+    /* Hide 'Created by' and viewer badge */
+    [data-testid="stStatusWidget"] {visibility: hidden;}
+    .viewerBadge_container__1QS9H {display: none !important;}
+    .stAppDeployButton {display: none !important;}
+    div.viewerBadge_container__17935 {display: none !important;}
+    div[data-testid="stDecoration"] {display: none !important;}
+    
     /* Metrics Dashboard Positioning */
     div[data-testid="stMetric"] {
         background: rgba(255, 255, 255, 0.8) !important;
