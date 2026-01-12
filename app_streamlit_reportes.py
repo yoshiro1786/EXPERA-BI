@@ -62,17 +62,23 @@ st.markdown("""
         padding-top: 1rem !important;
     }
 
-    /* Hide default elements */
+    /* Aggressive Hide Streamlit Branding & Footer */
     #MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
     header {visibility: hidden;}
-    
-    /* Hide 'Created by' and viewer badge */
     [data-testid="stStatusWidget"] {visibility: hidden;}
-    .viewerBadge_container__1QS9H {display: none !important;}
     .stAppDeployButton {display: none !important;}
-    div.viewerBadge_container__17935 {display: none !important;}
-    div[data-testid="stDecoration"] {display: none !important;}
+    [data-testid="stDecoration"] {display: none !important;}
+    
+    /* Target the specific Streamlit Cloud viewer badge containers */
+    div[class^="viewerBadge"] {display: none !important;}
+    div[class*="viewerBadge"] {display: none !important;}
+    .viewerBadge_container__1QS9H {display: none !important;}
+    
+    /* Move app content higher to compensate for hidden header */
+    .stAppViewContainer {
+        padding-bottom: 0px !important;
+    }
     
     /* Metrics Dashboard Positioning */
     div[data-testid="stMetric"] {
